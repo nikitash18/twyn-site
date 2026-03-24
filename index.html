@@ -86,11 +86,10 @@
     color: var(--parchment);
     letter-spacing: 1px;
     text-decoration: none;
-    cursor: default; /* Non-clickable feel */
+    cursor: default;
     user-select: none;
   }
 
-  /* Dot color changed to white/parchment for both hero and footer */
   .hero-logo span, .footer-logo span { color: var(--parchment); }
 
   .hero-content {
@@ -239,9 +238,11 @@
     gap: 12px;
   }
 
+  .footer-left { display: flex; align-items: center; gap: 24px; }
   .footer-logo { font-family: 'Azeret Mono', monospace; font-size: 14px; color: var(--stone); letter-spacing: 1px; cursor: default; }
-
   .footer-copy { font-size: 11px; color: var(--stone); letter-spacing: 0.04em; }
+  .footer-link { font-size: 11px; color: var(--stone); text-decoration: none; border-bottom: 0.5px solid transparent; transition: border 0.2s; }
+  .footer-link:hover { border-bottom: 0.5px solid var(--stone); }
 
   /* COOKIE BANNER */
   .cookie-banner {
@@ -309,6 +310,7 @@
   @media (max-width: 600px) {
     .hero-logo { left: 24px; top: 24px; }
     footer { padding: 20px 24px; flex-direction: column; text-align: center; }
+    .footer-left { flex-direction: column; gap: 8px; }
     .faq-question { padding: 18px 20px; font-size: 12px; }
     .faq-answer { padding: 0 20px; }
     .faq-item.open .faq-answer { padding: 0 20px 18px; }
@@ -352,12 +354,15 @@
 </section>
 
 <footer>
-  <div class="footer-logo">twyn<span>.</span></div>
+  <div class="footer-left">
+    <div class="footer-logo">twyn<span>.</span></div>
+    <a href="privacy.html" class="footer-link">privacy policy</a>
+  </div>
   <div class="footer-copy">© 2026 twyn · your wellness companion</div>
 </footer>
 
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
-  <p class="cookie-text">twyn uses cookies to understand how people find us and improve the experience. we never sell your data. <a href="/privacy">learn more</a></p>
+  <p class="cookie-text">twyn uses cookies to understand how people find us and improve the experience. we never sell your data. <a href="privacy.html">learn more</a></p>
   <div class="cookie-actions">
     <button class="cookie-accept" id="cookieAccept">accept</button>
     <button class="cookie-decline" id="cookieDecline">decline</button>
