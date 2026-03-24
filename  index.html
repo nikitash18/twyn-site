@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twyn — your wellness companion</title>
+<meta name="description" content="The wellness app that's actually on your side. No barcodes, no guilt, no red numbers. Just talk to Twyn — she handles the rest.">
+<meta name="keywords" content="wellness app, AI companion, calorie tracking, health app, twyn">
+<meta name="author" content="Twyn">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://twyn.io">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://twyn.io">
+<meta property="og:title" content="Twyn — your wellness companion">
+<meta property="og:description" content="The wellness app that's actually on your side. No barcodes, no guilt, no red numbers.">
+<meta property="og:image" content="https://twyn.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Twyn — your wellness companion">
+<meta name="twitter:description" content="The wellness app that's actually on your side.">
+<meta name="twitter:image" content="https://twyn.io/og-image.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="theme-color" content="#0e0d0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400&family=Outfit:wght@300;400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0e0d0b;
+    --surface:   #1a3028;
+    --border:    #2e2b24;
+    --terra:     #c4633a;
+    --stone:     #8a8275;
+    --parchment: #f0ebe1;
+    --cream:     #faf7f2;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--parchment);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(14,13,11,0.2) 0%, rgba(14,13,11,0.55) 50%, rgba(14,13,11,0.82) 100%);
+    z-index: 1;
+  }
+
+  .hero-logo {
+    position: absolute;
+    top: 32px;
+    left: 40px;
+    z-index: 3;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 16px;
+    color: var(--parchment);
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
+  .hero-logo span { color: var(--terra); }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--parchment);
+  }
+
+  .hero-sub {
+    font-size: clamp(12px, 1.5vw, 15px);
+    color: var(--parchment);
+    opacity: 0.65;
+    letter-spacing: 0.04em;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 9999px;
+    background: var(--terra);
+    color: var(--cream);
+    transition: opacity 0.2s, transform 0.2s;
+    margin-top: 8px;
+  }
+
+  .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* FAQ */
+  .faq {
+    background: var(--bg);
+    padding: 100px 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .faq-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--parchment);
+    text-align: center;
+    margin-bottom: 56px;
+    letter-spacing: -0.02em;
+  }
+
+  .faq-list {
+    width: 100%;
+    max-width: 780px;
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .faq-item { border-bottom: 0.5px solid var(--border); }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 28px;
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--parchment);
+    gap: 16px;
+    transition: background 0.2s;
+  }
+
+  .faq-question:hover { background: rgba(255,255,255,0.02); }
+
+  .faq-icon {
+    color: var(--stone);
+    font-size: 20px;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    font-style: normal;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    font-size: 13px;
+    color: var(--stone);
+    line-height: 1.9;
+    padding: 0 28px;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 200px;
+    padding: 0 28px 22px;
+  }
+
+  .faq-contact {
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--stone);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  .faq-contact a { color: var(--stone); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg);
+    border-top: 0.5px solid var(--border);
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-logo { font-family: 'Azeret Mono', monospace; font-size: 14px; color: var(--stone); letter-spacing: 1px; }
+  .footer-logo span { color: var(--terra); }
+
+  .footer-copy { font-size: 11px; color: var(--stone); letter-spacing: 0.04em; }
+
+  /* COOKIE BANNER */
+  .cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: #1c1a16;
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    max-width: 520px;
+    width: calc(100% - 48px);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .cookie-banner.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(16px);
+    pointer-events: none;
+  }
+
+  .cookie-text { font-size: 12px; color: var(--stone); line-height: 1.7; }
+  .cookie-text a { color: var(--parchment); text-decoration: underline; text-underline-offset: 3px; }
+
+  .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .cookie-accept {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--terra);
+    color: var(--cream);
+    border: none;
+    border-radius: 9999px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .cookie-accept:hover { opacity: 0.85; }
+
+  .cookie-decline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--stone);
+    border: 0.5px solid var(--border);
+    border-radius: 9999px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .cookie-decline:hover { color: var(--parchment); }
+
+  @media (max-width: 600px) {
+    .hero-logo { left: 24px; top: 24px; }
+    footer { padding: 20px 24px; flex-direction: column; text-align: center; }
+    .faq-question { padding: 18px 20px; font-size: 12px; }
+    .faq-answer { padding: 0 20px; }
+    .faq-item.open .faq-answer { padding: 0 20px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <a href="/" class="hero-logo">twyn<span>.</span></a>
+  <div class="hero-content">
+    <h1 class="hero-heading">your one thing.</h1>
+    <p class="hero-sub">the wellness companion that's actually on your side.</p>
+    <a href="https://form.typeform.com/to/NMLbJcnG" target="_blank" rel="noopener" class="btn">join the waitlist</a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="faq-heading">frequently asked questions.</h2>
+  <div class="faq-list">
+    <div class="faq-item open">
+      <button class="faq-question" aria-expanded="true">what is twyn?<i class="faq-icon">+</i></button>
+      <div class="faq-answer">twyn is an AI wellness companion. you tell her what you ate, she tracks your calories, water and steps. no barcodes, no guilt, no red numbers.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">how does logging work?<i class="faq-icon">+</i></button>
+      <div class="faq-answer">just talk to her naturally. "had a flat white and some granola" is enough. twyn estimates the calories, confirms back, and saves it to your day.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">does it connect to apple health?<i class="faq-icon">+</i></button>
+      <div class="faq-answer">yes. twyn reads your steps and active calories from apple health automatically. you never have to log movement manually.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">when does twyn launch?<i class="faq-icon">+</i></button>
+      <div class="faq-answer">soon. join the waitlist for early access and a locked-in launch price before we open to everyone.</div>
+    </div>
+  </div>
+  <p class="faq-contact">still have questions? <a href="https://instagram.com/twyn.io">dm us on instagram</a></p>
+</section>
+
+<footer>
+  <div class="footer-logo">twyn<span>.</span></div>
+  <div class="footer-copy">© 2026 twyn · your wellness companion</div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <p class="cookie-text">twyn uses cookies to understand how people find us and improve the experience. we never sell your data. <a href="/privacy">learn more</a></p>
+  <div class="cookie-actions">
+    <button class="cookie-accept" id="cookieAccept">accept</button>
+    <button class="cookie-decline" id="cookieDecline">decline</button>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  const banner = document.getElementById('cookieBanner');
+  if (localStorage.getItem('twyn_cookie_consent')) banner.classList.add('hidden');
+
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    localStorage.setItem('twyn_cookie_consent', 'accepted');
+    banner.classList.add('hidden');
+  });
+
+  document.getElementById('cookieDecline').addEventListener('click', () => {
+    localStorage.setItem('twyn_cookie_consent', 'declined');
+    banner.classList.add('hidden');
+  });
+</script>
+
+</body>
+</html>
