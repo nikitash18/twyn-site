@@ -86,9 +86,12 @@
     color: var(--parchment);
     letter-spacing: 1px;
     text-decoration: none;
+    cursor: default; /* Non-clickable feel */
+    user-select: none;
   }
 
-  .hero-logo span { color: var(--terra); }
+  /* Dot color changed to white/parchment for both hero and footer */
+  .hero-logo span, .footer-logo span { color: var(--parchment); }
 
   .hero-content {
     position: relative;
@@ -236,8 +239,7 @@
     gap: 12px;
   }
 
-  .footer-logo { font-family: 'Azeret Mono', monospace; font-size: 14px; color: var(--stone); letter-spacing: 1px; }
-  .footer-logo span { color: var(--terra); }
+  .footer-logo { font-family: 'Azeret Mono', monospace; font-size: 14px; color: var(--stone); letter-spacing: 1px; cursor: default; }
 
   .footer-copy { font-size: 11px; color: var(--stone); letter-spacing: 0.04em; }
 
@@ -318,7 +320,7 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <a href="/" class="hero-logo">twyn<span>.</span></a>
+  <div class="hero-logo">twyn<span>.</span></div>
   <div class="hero-content">
     <h1 class="hero-heading">your one thing.</h1>
     <p class="hero-sub">the wellness companion that's actually on your side.</p>
