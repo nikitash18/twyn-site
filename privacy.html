@@ -19,76 +19,119 @@
             color: var(--parchment);
             font-family: 'JetBrains Mono', monospace;
             line-height: 1.8;
-            padding: 60px 24px;
-            max-width: 700px;
+            padding: 80px 24px;
+            max-width: 800px;
             margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .back-link {
+        .nav-back {
             display: inline-block;
             color: var(--stone);
             text-decoration: none;
-            font-size: 12px;
+            font-size: 11px;
             margin-bottom: 40px;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
+            transition: color 0.2s;
         }
 
-        .back-link:hover { color: var(--terra); }
+        .nav-back:hover { color: var(--terra); }
 
         h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 42px;
+            font-size: clamp(32px, 5vw, 48px);
             font-weight: 300;
             margin-bottom: 8px;
             letter-spacing: -0.02em;
+            color: var(--parchment);
         }
 
         .last-updated {
             color: var(--stone);
             font-size: 12px;
-            margin-bottom: 48px;
+            margin-bottom: 64px;
             display: block;
+            opacity: 0.8;
         }
 
-        section { margin-bottom: 32px; }
+        section { margin-bottom: 48px; }
 
         h2 {
-            font-size: 16px;
+            font-size: 14px;
             color: var(--terra);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 12px;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            font-weight: 400;
         }
 
-        p {
+        p, li {
             font-size: 14px;
             color: var(--stone);
             font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        ul { padding-left: 20px; margin-bottom: 24px; }
+        li { margin-bottom: 8px; }
+
+        strong { color: var(--parchment); font-weight: 400; }
+
+        hr { border: 0; border-top: 0.5px solid var(--border); margin: 40px 0; }
+
+        @media (max-width: 600px) {
+            body { padding: 40px 24px; }
         }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="back-link">← back to home</a>
+    <a href="index.html" class="nav-back">← back to home</a>
 
     <h1>privacy policy.</h1>
-    <span class="last-updated">last updated: March 24, 2026</span>
+    <span class="last-updated">Last Updated: March 24, 2026</span>
 
     <section>
-        <h2>our philosophy</h2>
-        <p>your data belongs to you. twyn is designed to be a private companion, not a data broker. we don't sell your personal information, and we never will.</p>
+        <h2>1. introduction</h2>
+        <p>At <strong>twyn</strong>, we value your privacy. This policy outlines how we handle your personal information when you use our website and AI wellness companion. Our core principle is simple: <strong>Your data is yours. We do not sell it.</strong></p>
     </section>
 
     <section>
-        <h2>data we collect</h2>
-        <p>we only collect information necessary to provide the wellness experience: your logged meals, activity data from apple health, and basic usage analytics to help us improve the app.</p>
+        <h2>2. data we collect</h2>
+        <ul>
+            <li><strong>Usage Data:</strong> We use cookies to understand how visitors find us and interact with our site.</li>
+            <li><strong>Health Data:</strong> With your permission, we access Apple Health data (steps, active energy) to provide insights.</li>
+            <li><strong>Conversational Data:</strong> When you log meals or activity via chat, our AI processes this text to calculate nutritional estimates.</li>
+        </ul>
     </section>
 
     <section>
-        <h2>cookies</h2>
-        <p>we use small text files (cookies) to understand how visitors interact with our site and to remember your preferences. you can decline these at any time via the banner on our home page.</p>
+        <h2>3. AI & processing</h2>
+        <p>twyn uses artificial intelligence to interpret your natural language logs. This data is used solely to provide you with wellness metrics. We do not use your personal meal logs to train public AI models in a way that identifies you.</p>
     </section>
 
-    </body>
+    <section>
+        <h2>4. your rights (GDPR)</h2>
+        <p>If you are located in the EU/UK, you have the following rights:</p>
+        <ul>
+            <li>The right to access the data we hold about you.</li>
+            <li>The right to request deletion of your data.</li>
+            <li>The right to withdraw consent for data processing at any time.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5. cookies</h2>
+        <p>We use essential and analytical cookies. You can choose to decline non-essential cookies via the banner on our homepage. Declining cookies will not break your experience on twyn.</p>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>contact</h2>
+        <p>Questions about your data? Reach out to us at <a href="https://instagram.com/twyn.io" style="color: var(--stone);">@twyn.io</a></p>
+    </section>
+
+</body>
 </html>
