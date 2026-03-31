@@ -80,8 +80,27 @@
 
         hr { border: 0; border-top: 0.5px solid var(--border); margin: 40px 0; }
 
+        footer {
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 0.5px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-left { display: flex; align-items: center; gap: 24px; }
+        .footer-logo { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--stone); letter-spacing: 1px; cursor: default; }
+        .footer-copy { font-size: 11px; color: var(--stone); letter-spacing: 0.04em; }
+        .footer-link { font-size: 11px; color: var(--stone); text-decoration: none; border-bottom: 0.5px solid transparent; transition: border 0.2s; }
+        .footer-link:hover { border-bottom: 0.5px solid var(--stone); }
+
         @media (max-width: 600px) {
             body { padding: 40px 24px; }
+            footer { flex-direction: column; text-align: center; }
+            .footer-left { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
@@ -132,6 +151,15 @@
         <h2>contact</h2>
         <p>Questions about your data? Reach out to us at <a href="https://instagram.com/twyn.io" style="color: var(--stone);">@twyn.io</a></p>
     </section>
+
+    <footer>
+        <div class="footer-left">
+            <div class="footer-logo">twyn.</div>
+            <a href="privacy.html" class="footer-link">privacy policy</a>
+            <a href="terms.html" class="footer-link">terms &amp; conditions</a>
+        </div>
+        <div class="footer-copy">© 2026 twyn · your wellness companion</div>
+    </footer>
 
 </body>
 </html>
