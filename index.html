@@ -307,6 +307,198 @@
 
   .cookie-decline:hover { color: var(--parchment); }
 
+  /* JOURNEY */
+  .journey {
+    background: var(--bg);
+    border-top: 0.5px solid var(--border);
+    padding: 100px 40px;
+    overflow: hidden;
+  }
+
+  .journey-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .journey-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .journey-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 300;
+    color: var(--parchment);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .journey-heading em {
+    font-style: italic;
+    color: var(--terra);
+  }
+
+  .journey-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .journey-counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--stone);
+    letter-spacing: 0.1em;
+    min-width: 48px;
+    text-align: right;
+  }
+
+  .journey-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s, background 0.2s;
+  }
+
+  .journey-btn.prev {
+    background: transparent;
+    color: var(--stone);
+    border: 0.5px solid var(--border);
+  }
+
+  .journey-btn.next {
+    background: var(--terra);
+    color: var(--cream);
+  }
+
+  .journey-btn:disabled { opacity: 0.3; cursor: default; }
+  .journey-btn:not(:disabled):hover { opacity: 0.82; }
+
+  .journey-viewport { overflow: hidden; }
+
+  .journey-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .journey-card {
+    flex: 0 0 calc(50% - 12px);
+    min-width: 0;
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.25s;
+  }
+
+  .journey-card:hover { border-color: var(--terra); }
+
+  .journey-img-wrap {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: #1a1814;
+    overflow: hidden;
+  }
+
+  .journey-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Placeholder shown when no image is set */
+  .journey-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #1a1814;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.5;
+  }
+
+  .journey-week-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    background: rgba(14, 13, 11, 0.78);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 10px;
+  }
+
+  .journey-body { padding: 20px 24px 28px; }
+
+  .journey-week-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .journey-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 300;
+    color: var(--parchment);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .journey-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--stone);
+    line-height: 1.9;
+    font-weight: 300;
+  }
+
+  .journey-progress {
+    height: 0.5px;
+    background: var(--border);
+    margin-top: 36px;
+    position: relative;
+  }
+
+  .journey-progress-fill {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    background: var(--terra);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media (max-width: 768px) {
+    .journey { padding: 72px 24px; }
+    .journey-card { flex: 0 0 85%; }
+  }
+
+  @media (max-width: 480px) {
+    .journey-card { flex: 0 0 90%; }
+  }
+
   @media (max-width: 600px) {
     .hero-logo { left: 24px; top: 24px; }
     footer { padding: 20px 24px; flex-direction: column; text-align: center; }
@@ -327,6 +519,78 @@
     <h1 class="hero-heading">your one thing.</h1>
     <p class="hero-sub">the wellness companion that's actually on your side.</p>
     <a href="https://form.typeform.com/to/NMLbJcnG" target="_blank" rel="noopener" class="btn">join the waitlist</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOLLOW OUR JOURNEY SECTION
+     ─ To add a new week: copy one .journey-card block below
+     ─ To add an image: replace <div class="journey-img-placeholder"></div>
+       with <img src="your-image.jpg" alt="Week X">
+     ─ New cards appear automatically in the carousel
+     ═══════════════════════════════════════════════════════════ -->
+<section class="journey">
+  <div class="journey-inner">
+    <div class="journey-header">
+      <h2 class="journey-heading">follow our <em>journey.</em></h2>
+      <div class="journey-controls" id="journeyControls">
+        <span class="journey-counter" id="journeyCounter">01 / 01</span>
+        <button class="journey-btn prev" id="journeyPrev" aria-label="Previous week">←</button>
+        <button class="journey-btn next" id="journeyNext" aria-label="Next week">→</button>
+      </div>
+    </div>
+
+    <div class="journey-viewport">
+      <div class="journey-track" id="journeyTrack">
+
+        <!-- WEEK 01 ─ save your screenshot as week1.jpg in the repo root to show it here -->
+        <div class="journey-card">
+          <div class="journey-img-wrap">
+            <img src="week1.jpg" alt="Week 1 — Xcode setup and welcome screen design" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <div class="journey-img-placeholder" style="display:none;position:absolute;inset:0;"></div>
+            <span class="journey-week-badge">week 01</span>
+          </div>
+          <div class="journey-body">
+            <span class="journey-week-label">week 01</span>
+            <h3 class="journey-title">laying the foundations.</h3>
+            <p class="journey-text">Week one was all about getting the bones in place. We set up Xcode, wired in Supabase for auth and data, and started sketching out the onboarding flow. By the end of the week we had Apple Sign In actually working, animations running on the welcome screen, and a design that finally felt like twyn. Small steps — but it's starting to look real.</p>
+          </div>
+        </div>
+
+        <!-- WEEK 02 ─ uncomment when ready to publish
+        <div class="journey-card">
+          <div class="journey-img-wrap">
+            <div class="journey-img-placeholder"></div>
+            <span class="journey-week-badge">week 02</span>
+          </div>
+          <div class="journey-body">
+            <span class="journey-week-label">week 02</span>
+            <h3 class="journey-title">first build.</h3>
+            <p class="journey-text">The code is messy and the UI is literally just rectangles. Honestly, terrified that I'm over-complicating things. But seeing the first data point sync across the app made everything feel real for the very first time. Progress isn't pretty — but it's progress.</p>
+          </div>
+        </div>
+        -->
+
+        <!-- WEEK 03 ─ uncomment when ready to publish
+        <div class="journey-card">
+          <div class="journey-img-wrap">
+            <div class="journey-img-placeholder"></div>
+            <span class="journey-week-badge">week 03</span>
+          </div>
+          <div class="journey-body">
+            <span class="journey-week-label">week 03</span>
+            <h3 class="journey-title">title here.</h3>
+            <p class="journey-text">Your story for week 3 goes here.</p>
+          </div>
+        </div>
+        -->
+
+      </div>
+    </div>
+
+    <div class="journey-progress">
+      <div class="journey-progress-fill" id="journeyProgressFill"></div>
+    </div>
   </div>
 </section>
 
@@ -371,6 +635,66 @@
 </div>
 
 <script>
+  // ─── Journey carousel ───────────────────────────────────────
+  (function () {
+    const track    = document.getElementById('journeyTrack');
+    const prevBtn  = document.getElementById('journeyPrev');
+    const nextBtn  = document.getElementById('journeyNext');
+    const counter  = document.getElementById('journeyCounter');
+    const controls = document.getElementById('journeyControls');
+    const fill     = document.getElementById('journeyProgressFill');
+
+    if (!track) return;
+
+    const cards = Array.from(track.querySelectorAll('.journey-card'));
+    const total = cards.length;
+    let current = 0;
+
+    function visibleCount() {
+      return window.innerWidth >= 768 ? 2 : 1;
+    }
+
+    function maxIndex() {
+      return Math.max(0, total - visibleCount());
+    }
+
+    function update() {
+      const vis      = visibleCount();
+      const vpWidth  = track.parentElement.offsetWidth;
+      const gap      = 24;
+      const cardW    = (vpWidth - gap * (vis - 1)) / vis;
+      const offset   = current * (cardW + gap);
+
+      track.style.transform = `translateX(-${offset}px)`;
+
+      counter.textContent =
+        String(current + 1).padStart(2, '0') + ' / ' +
+        String(total).padStart(2, '0');
+
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current >= maxIndex();
+
+      // Only show controls when there is more than one card
+      controls.style.visibility = total > 1 ? 'visible' : 'hidden';
+
+      // Progress bar
+      const pct = maxIndex() === 0 ? 100 : (current / maxIndex()) * 100;
+      fill.style.width = pct + '%';
+    }
+
+    prevBtn.addEventListener('click', function () {
+      if (current > 0) { current--; update(); }
+    });
+
+    nextBtn.addEventListener('click', function () {
+      if (current < maxIndex()) { current++; update(); }
+    });
+
+    window.addEventListener('resize', update);
+    update();
+  }());
+  // ────────────────────────────────────────────────────────────
+
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
