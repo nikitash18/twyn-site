@@ -132,8 +132,9 @@
     border-radius: 9999px;
     background: var(--terra);
     color: var(--cream);
+    border: none;
+    cursor: pointer;
     transition: opacity 0.2s, transform 0.2s;
-    margin-top: 8px;
   }
 
   .btn:hover { opacity: 0.88; transform: translateY(-1px); }
@@ -419,7 +420,6 @@
     display: block;
   }
 
-  /* Placeholder shown when no image is set */
   .journey-img-placeholder {
     width: 100%;
     height: 100%;
@@ -518,17 +518,21 @@
   <div class="hero-content">
     <h1 class="hero-heading">your one thing.</h1>
     <p class="hero-sub">the wellness companion that's actually on your side.</p>
-    <a href="https://form.typeform.com/to/NMLbJcnG" target="_blank" rel="noopener" class="btn">join the waitlist</a>
+
+    <!-- WAITLIST FORM -->
+    <div id="waitlistForm" style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center;">
+      <input
+        type="email"
+        id="waitlistEmail"
+        placeholder="your@email.com"
+        style="font-family:'JetBrains Mono',monospace;font-size:13px;padding:16px 24px;border-radius:9999px;border:0.5px solid rgba(240,235,225,0.25);background:rgba(240,235,225,0.07);color:var(--parchment);outline:none;width:260px;letter-spacing:0.04em;"
+      />
+      <button onclick="submitWaitlist()" class="btn">join the waitlist</button>
+    </div>
+    <p id="waitlistMsg" style="font-size:12px;color:var(--stone);letter-spacing:0.04em;min-height:18px;margin-top:4px;"></p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FOLLOW OUR JOURNEY SECTION
-     ─ To add a new week: copy one .journey-card block below
-     ─ To add an image: replace <div class="journey-img-placeholder"></div>
-       with <img src="your-image.jpg" alt="Week X">
-     ─ New cards appear automatically in the carousel
-     ═══════════════════════════════════════════════════════════ -->
 <section class="journey">
   <div class="journey-inner">
     <div class="journey-header">
@@ -543,7 +547,6 @@
     <div class="journey-viewport">
       <div class="journey-track" id="journeyTrack">
 
-        <!-- WEEK 01 ─ save your screenshot as week1.jpg in the repo root to show it here -->
         <div class="journey-card">
           <div class="journey-img-wrap">
             <img src="week1.jpg" alt="Week 1 — Xcode setup and welcome screen design" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
@@ -553,11 +556,10 @@
           <div class="journey-body">
             <span class="journey-week-label">week 01</span>
             <h3 class="journey-title">building the brand.</h3>
-            <p class="journey-text">week one was about more than just aesthetics; it was about defining the soul of twyn. We focused on establishing a visual identity and design system that balances personality with scalability. By launching our social presence early, we’ve begun building a community-led feedback loop before the first pixel of the app is even interacted with.</p>
+            <p class="journey-text">week one was about more than just aesthetics; it was about defining the soul of twyn. We focused on establishing a visual identity and design system that balances personality with scalability. By launching our social presence early, we've begun building a community-led feedback loop before the first pixel of the app is even interacted with.</p>
           </div>
         </div>
 
-        <!-- WEEK 02 -->
         <div class="journey-card">
           <div class="journey-img-wrap">
             <img src="week2.jpg" alt="Week 2 — animations, polish and making it feel alive" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
@@ -635,6 +637,43 @@
 </div>
 
 <script>
+  // ─── Waitlist form ──────────────────────────────────────────
+  async function submitWaitlist() {
+    const email = document.getElementById('waitlistEmail').value.trim()
+    const msg = document.getElementById('waitlistMsg')
+
+    if (!email || !email.includes('@')) {
+      msg.textContent = 'please enter a valid email.'
+      return
+    }
+
+    msg.textContent = '...'
+
+    const res = await fetch('https://ssgqucgbnguthqwrwpzc.supabase.co/functions/v1/submit-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    })
+
+    if (res.ok) {
+      document.getElementById('waitlistForm').style.display = 'none'
+      msg.style.color = 'var(--parchment)'
+      msg.textContent = "you're on the list. we'll be in touch ✦"
+    } else if (res.status === 409) {
+      msg.textContent = "you're already on the list!"
+    } else {
+      msg.textContent = 'something went wrong — dm us on instagram.'
+    }
+  }
+
+  // Allow Enter key to submit
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('waitlistEmail').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') submitWaitlist()
+    })
+  })
+  // ────────────────────────────────────────────────────────────
+
   // ─── Journey carousel ───────────────────────────────────────
   (function () {
     const track    = document.getElementById('journeyTrack');
@@ -674,10 +713,8 @@
       prevBtn.disabled = current === 0;
       nextBtn.disabled = current >= maxIndex();
 
-      // Only show controls when there is more than one card
       controls.style.visibility = total > 1 ? 'visible' : 'hidden';
 
-      // Progress bar
       const pct = maxIndex() === 0 ? 100 : (current / maxIndex()) * 100;
       fill.style.width = pct + '%';
     }
