@@ -49,7 +49,6 @@
     overflow-x: hidden;
   }
 
-  /* HERO */
   .hero {
     position: relative;
     height: 100vh;
@@ -139,7 +138,6 @@
 
   .btn:hover { opacity: 0.88; transform: translateY(-1px); }
 
-  /* FAQ */
   .faq {
     background: var(--bg);
     padding: 100px 24px;
@@ -227,7 +225,6 @@
 
   .faq-contact a { color: var(--stone); text-decoration: underline; text-underline-offset: 3px; }
 
-  /* FOOTER */
   footer {
     background: var(--bg);
     border-top: 0.5px solid var(--border);
@@ -245,7 +242,6 @@
   .footer-link { font-size: 11px; color: var(--stone); text-decoration: none; border-bottom: 0.5px solid transparent; transition: border 0.2s; }
   .footer-link:hover { border-bottom: 0.5px solid var(--stone); }
 
-  /* COOKIE BANNER */
   .cookie-banner {
     position: fixed;
     bottom: 24px;
@@ -273,7 +269,6 @@
 
   .cookie-text { font-size: 12px; color: var(--stone); line-height: 1.7; }
   .cookie-text a { color: var(--parchment); text-decoration: underline; text-underline-offset: 3px; }
-
   .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
   .cookie-accept {
@@ -308,7 +303,6 @@
 
   .cookie-decline:hover { color: var(--parchment); }
 
-  /* JOURNEY */
   .journey {
     background: var(--bg);
     border-top: 0.5px solid var(--border);
@@ -316,10 +310,7 @@
     overflow: hidden;
   }
 
-  .journey-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+  .journey-inner { max-width: 1200px; margin: 0 auto; }
 
   .journey-header {
     display: flex;
@@ -337,17 +328,8 @@
     line-height: 1;
   }
 
-  .journey-heading em {
-    font-style: italic;
-    color: var(--terra);
-  }
-
-  .journey-controls {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-shrink: 0;
-  }
+  .journey-heading em { font-style: italic; color: var(--terra); }
+  .journey-controls { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 
   .journey-counter {
     font-family: 'JetBrains Mono', monospace;
@@ -372,17 +354,8 @@
     transition: opacity 0.2s, background 0.2s;
   }
 
-  .journey-btn.prev {
-    background: transparent;
-    color: var(--stone);
-    border: 0.5px solid var(--border);
-  }
-
-  .journey-btn.next {
-    background: var(--terra);
-    color: var(--cream);
-  }
-
+  .journey-btn.prev { background: transparent; color: var(--stone); border: 0.5px solid var(--border); }
+  .journey-btn.next { background: var(--terra); color: var(--cream); }
   .journey-btn:disabled { opacity: 0.3; cursor: default; }
   .journey-btn:not(:disabled):hover { opacity: 0.82; }
 
@@ -413,12 +386,7 @@
     overflow: hidden;
   }
 
-  .journey-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  .journey-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .journey-img-placeholder {
     width: 100%;
@@ -518,8 +486,6 @@
   <div class="hero-content">
     <h1 class="hero-heading">your one thing.</h1>
     <p class="hero-sub">the wellness companion that's actually on your side.</p>
-
-    <!-- WAITLIST FORM -->
     <div id="waitlistForm" style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center;">
       <input
         type="email"
@@ -573,7 +539,7 @@
           </div>
         </div>
 
-        <!-- WEEK 03 ─ uncomment when ready to publish
+        <!-- WEEK 03 - uncomment when ready to publish
         <div class="journey-card">
           <div class="journey-img-wrap">
             <div class="journey-img-placeholder"></div>
@@ -625,7 +591,7 @@
     <a href="privacy.html" class="footer-link">privacy policy</a>
     <a href="terms.html" class="footer-link">terms &amp; conditions</a>
   </div>
-  <div class="footer-copy">© 2026 twyn · your wellness companion</div>
+  <div class="footer-copy">&copy; 2026 twyn &middot; your wellness companion</div>
 </footer>
 
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
@@ -637,28 +603,20 @@
 </div>
 
 <script>
-  // ─── Waitlist form ──────────────────────────────────────────
   async function submitWaitlist() {
     const email = document.getElementById('waitlistEmail').value.trim()
     const msg = document.getElementById('waitlistMsg')
-
-    if (!email || !email.includes('@')) {
-      msg.textContent = 'please enter a valid email.'
-      return
-    }
-
+    if (!email || !email.includes('@')) { msg.textContent = 'please enter a valid email.'; return }
     msg.textContent = '...'
-
     const res = await fetch('https://ssgqucgbnguthqwrwpzc.supabase.co/functions/v1/submit-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email })
     })
-
     if (res.ok) {
       document.getElementById('waitlistForm').style.display = 'none'
       msg.style.color = 'var(--parchment)'
-      msg.textContent = "you're on the list. we'll be in touch ✦"
+      msg.textContent = "you're on the list. we'll be in touch \u2726"
     } else if (res.status === 409) {
       msg.textContent = "you're already on the list!"
     } else {
@@ -666,71 +624,42 @@
     }
   }
 
-  // Allow Enter key to submit
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('waitlistEmail').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') submitWaitlist()
-    })
+  document.getElementById('waitlistEmail').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') submitWaitlist()
   })
-  // ────────────────────────────────────────────────────────────
 
-  // ─── Journey carousel ───────────────────────────────────────
-  (function () {
+  ;(function () {
     const track    = document.getElementById('journeyTrack');
     const prevBtn  = document.getElementById('journeyPrev');
     const nextBtn  = document.getElementById('journeyNext');
     const counter  = document.getElementById('journeyCounter');
     const controls = document.getElementById('journeyControls');
     const fill     = document.getElementById('journeyProgressFill');
-
     if (!track) return;
-
     const cards = Array.from(track.querySelectorAll('.journey-card'));
     const total = cards.length;
     let current = 0;
-
-    function visibleCount() {
-      return window.innerWidth >= 768 ? 2 : 1;
-    }
-
-    function maxIndex() {
-      return Math.max(0, total - visibleCount());
-    }
-
+    function visibleCount() { return window.innerWidth >= 768 ? 2 : 1; }
+    function maxIndex() { return Math.max(0, total - visibleCount()); }
     function update() {
-      const vis      = visibleCount();
-      const vpWidth  = track.parentElement.offsetWidth;
-      const gap      = 24;
-      const cardW    = (vpWidth - gap * (vis - 1)) / vis;
-      const offset   = current * (cardW + gap);
-
-      track.style.transform = `translateX(-${offset}px)`;
-
-      counter.textContent =
-        String(current + 1).padStart(2, '0') + ' / ' +
-        String(total).padStart(2, '0');
-
+      const vis = visibleCount();
+      const vpWidth = track.parentElement.offsetWidth;
+      const gap = 24;
+      const cardW = (vpWidth - gap * (vis - 1)) / vis;
+      const offset = current * (cardW + gap);
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
       prevBtn.disabled = current === 0;
       nextBtn.disabled = current >= maxIndex();
-
       controls.style.visibility = total > 1 ? 'visible' : 'hidden';
-
       const pct = maxIndex() === 0 ? 100 : (current / maxIndex()) * 100;
       fill.style.width = pct + '%';
     }
-
-    prevBtn.addEventListener('click', function () {
-      if (current > 0) { current--; update(); }
-    });
-
-    nextBtn.addEventListener('click', function () {
-      if (current < maxIndex()) { current++; update(); }
-    });
-
+    prevBtn.addEventListener('click', function () { if (current > 0) { current--; update(); } });
+    nextBtn.addEventListener('click', function () { if (current < maxIndex()) { current++; update(); } });
     window.addEventListener('resize', update);
     update();
   }());
-  // ────────────────────────────────────────────────────────────
 
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -749,12 +678,10 @@
 
   const banner = document.getElementById('cookieBanner');
   if (localStorage.getItem('twyn_cookie_consent')) banner.classList.add('hidden');
-
   document.getElementById('cookieAccept').addEventListener('click', () => {
     localStorage.setItem('twyn_cookie_consent', 'accepted');
     banner.classList.add('hidden');
   });
-
   document.getElementById('cookieDecline').addEventListener('click', () => {
     localStorage.setItem('twyn_cookie_consent', 'declined');
     banner.classList.add('hidden');
