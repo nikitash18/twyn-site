@@ -4,32 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Twyn — your wellness companion</title>
-<meta name="description" content="The wellness app that's actually on your side. No barcodes, no guilt, no red numbers. Just talk to Twyn — she handles the rest.">
-<meta name="keywords" content="wellness app, AI companion, calorie tracking, health app, twyn">
-<meta name="author" content="Twyn">
+<meta name="description" content="The wellness app that's actually on your side. No barcodes, no guilt, no red numbers.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://twyn.io">
+<link rel="canonical" href="https://twynapp.io">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://twyn.io">
+<meta property="og:url" content="https://twynapp.io">
 <meta property="og:title" content="Twyn — your wellness companion">
 <meta property="og:description" content="The wellness app that's actually on your side. No barcodes, no guilt, no red numbers.">
-<meta property="og:image" content="https://twyn.io/og-image.jpg">
+<meta property="og:image" content="https://twynapp.io/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Twyn — your wellness companion">
 <meta name="twitter:description" content="The wellness app that's actually on your side.">
-<meta name="twitter:image" content="https://twyn.io/og-image.jpg">
+<meta name="twitter:image" content="https://twynapp.io/og-image.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <meta name="theme-color" content="#0e0d0b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400&family=Outfit:wght@300;400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400&family=Outfit:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg:        #0e0d0b;
-    --surface:   #1a3028;
     --border:    #2e2b24;
     --terra:     #c4633a;
     --stone:     #8a8275;
@@ -49,76 +46,7 @@
     overflow-x: hidden;
   }
 
-  .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('hero.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(14,13,11,0.2) 0%, rgba(14,13,11,0.55) 50%, rgba(14,13,11,0.82) 100%);
-    z-index: 1;
-  }
-
-  .hero-logo {
-    position: absolute;
-    top: 32px;
-    left: 40px;
-    z-index: 3;
-    font-family: 'Azeret Mono', monospace;
-    font-size: 16px;
-    color: var(--parchment);
-    letter-spacing: 1px;
-    text-decoration: none;
-    cursor: default;
-    user-select: none;
-  }
-
-  .hero-logo span, .footer-logo span { color: var(--parchment); }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 0 24px;
-    max-width: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .hero-heading {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(48px, 7vw, 88px);
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: var(--parchment);
-  }
-
-  .hero-sub {
-    font-size: clamp(12px, 1.5vw, 15px);
-    color: var(--parchment);
-    opacity: 0.65;
-    letter-spacing: 0.04em;
-  }
-
+  /* ── SHARED ── */
   .btn {
     display: inline-block;
     font-family: 'JetBrains Mono', monospace;
@@ -135,53 +63,7 @@
     cursor: pointer;
     transition: opacity 0.2s, transform 0.2s;
   }
-
   .btn:hover { opacity: 0.88; transform: translateY(-1px); }
-
-  /* ── Survey Section ── */
-  .survey {
-    background: var(--bg);
-    border-top: 0.5px solid var(--border);
-    padding: 100px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .survey-inner {
-    max-width: 620px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .survey-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--terra);
-  }
-
-  .survey-heading {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(32px, 5vw, 56px);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--parchment);
-  }
-
-  .survey-sub {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: var(--stone);
-    line-height: 1.9;
-    font-weight: 300;
-    max-width: 480px;
-  }
 
   .btn-outline {
     display: inline-block;
@@ -198,199 +80,281 @@
     border: 0.5px solid rgba(240,235,225,0.3);
     cursor: pointer;
     transition: opacity 0.2s, transform 0.2s, border-color 0.2s, background 0.2s;
-    margin-top: 8px;
+  }
+  .btn-outline:hover { background: var(--terra); border-color: var(--terra); color: var(--cream); transform: translateY(-1px); }
+
+  /* ── 1. HERO — original untouched ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(14,13,11,0.2) 0%, rgba(14,13,11,0.55) 50%, rgba(14,13,11,0.82) 100%);
+    z-index: 1;
+  }
+  .hero-logo {
+    position: absolute;
+    top: 32px;
+    left: 40px;
+    z-index: 3;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 16px;
+    color: var(--parchment);
+    letter-spacing: 1px;
+    cursor: default;
+    user-select: none;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .hero-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--parchment);
+  }
+  .hero-sub {
+    font-size: clamp(12px, 1.5vw, 15px);
+    color: var(--parchment);
+    opacity: 0.65;
+    letter-spacing: 0.04em;
   }
 
-  .btn-outline:hover {
-    background: var(--terra);
-    border-color: var(--terra);
-    color: var(--cream);
-    transform: translateY(-1px);
-  }
-  /* ── end Survey Section ── */
-
-  .faq {
-    background: var(--bg);
-    padding: 100px 24px;
+  /* ── 2. TWYN IS HERE ── */
+  .intro {
     min-height: 100vh;
+    background: var(--parchment);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-
-  .faq-heading {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(28px, 4vw, 52px);
-    font-weight: 300;
-    color: var(--parchment);
+    padding: 80px 40px;
     text-align: center;
-    margin-bottom: 56px;
-    letter-spacing: -0.02em;
+    gap: 32px;
   }
-
-  .faq-list {
-    width: 100%;
-    max-width: 780px;
-    border: 0.5px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
+  .intro h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(44px, 7.5vw, 104px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: var(--bg);
+    max-width: 1100px;
   }
-
-  .faq-item { border-bottom: 0.5px solid var(--border); }
-  .faq-item:last-child { border-bottom: none; }
-
-  .faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 28px;
-    text-align: left;
+  .intro h2 em { font-style: italic; color: var(--terra); }
+  .intro p {
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
-    font-weight: 400;
-    color: var(--parchment);
-    gap: 16px;
-    transition: background 0.2s;
-  }
-
-  .faq-question:hover { background: rgba(255,255,255,0.02); }
-
-  .faq-icon {
-    color: var(--stone);
-    font-size: 20px;
-    line-height: 1;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-    font-style: normal;
-  }
-
-  .faq-item.open .faq-icon { transform: rotate(45deg); }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.35s ease;
-    font-size: 13px;
-    color: var(--stone);
-    line-height: 1.9;
-    padding: 0 28px;
-  }
-
-  .faq-item.open .faq-answer {
-    max-height: 200px;
-    padding: 0 28px 22px;
-  }
-
-  .faq-contact {
-    margin-top: 40px;
-    font-size: 12px;
-    color: var(--stone);
-    text-align: center;
+    color: #8a7e72;
     letter-spacing: 0.04em;
   }
 
-  .faq-contact a { color: var(--stone); text-decoration: underline; text-underline-offset: 3px; }
-
-  footer {
+  /* ── 3. WE GOT TIRED + NOT MEANT TO ── */
+  .why {
     background: var(--bg);
+    background-size: cover;
+    background-position: center;
     border-top: 0.5px solid var(--border);
-    padding: 24px 40px;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .footer-left { display: flex; align-items: center; gap: 24px; }
-  .footer-logo { font-family: 'Azeret Mono', monospace; font-size: 14px; color: var(--stone); letter-spacing: 1px; cursor: default; }
-  .footer-copy { font-size: 11px; color: var(--stone); letter-spacing: 0.04em; }
-  .footer-link { font-size: 11px; color: var(--stone); text-decoration: none; border-bottom: 0.5px solid transparent; transition: border 0.2s; }
-  .footer-link:hover { border-bottom: 0.5px solid var(--stone); }
-
-  .cookie-banner {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    background: #1c1a16;
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 24px;
-    max-width: 520px;
-    width: calc(100% - 48px);
-    display: flex;
+    justify-content: center;
+    padding: 80px 40px;
+    text-align: center;
     flex-direction: column;
-    gap: 14px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-    transition: opacity 0.3s, transform 0.3s;
+    gap: 32px;
+    position: relative;
   }
-
-  .cookie-banner.hidden {
-    opacity: 0;
-    transform: translateX(-50%) translateY(16px);
+  .why::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(14,13,11,0.6);
     pointer-events: none;
   }
-
-  .cookie-text { font-size: 12px; color: var(--stone); line-height: 1.7; }
-  .cookie-text a { color: var(--parchment); text-decoration: underline; text-underline-offset: 3px; }
-  .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-
-  .cookie-accept {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: var(--terra);
-    color: var(--cream);
-    border: none;
-    border-radius: 9999px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: opacity 0.2s;
+  .why h3, .why p { position: relative; z-index: 1; }
+  .why h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(44px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: var(--parchment);
+    max-width: 1000px;
   }
-
-  .cookie-accept:hover { opacity: 0.85; }
-
-  .cookie-decline {
+  .why h3 em { font-style: italic; color: var(--terra); }
+  .why p {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: transparent;
+    font-size: 13px;
     color: var(--stone);
-    border: 0.5px solid var(--border);
-    border-radius: 9999px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: color 0.2s;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+    max-width: 440px;
   }
 
-  .cookie-decline:hover { color: var(--parchment); }
 
+  /* ── SURVEY ── */
+  .survey {
+    background: var(--bg);
+    border-top: 0.5px solid var(--border);
+    padding: 100px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .survey-inner {
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .survey-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--terra);
+  }
+  .survey-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--parchment);
+  }
+  .survey-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--stone);
+    line-height: 1.9;
+    max-width: 480px;
+  }
+
+  /* ── 5. FOUNDERS ── */
+  .founders {
+    border-top: 0.5px solid var(--border);
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px 40px;
+  }
+  .founders-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1;
+  }
+  .founders-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .founders-top h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--parchment);
+  }
+  .founders-top h2 em { font-style: italic; color: var(--terra); }
+  .founders-top p {
+    font-size: 13px;
+    color: var(--stone);
+    line-height: 1.9;
+  }
+
+  /* photo fills remaining space */
+  .founders-photo {
+    flex: 1;
+    overflow: hidden;
+    background: #161310;
+    border-radius: 8px;
+    position: relative;
+    min-height: 0;
+  }
+  .founders-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+  }
+  .founders-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--border);
+  }
+
+  .founders-names {
+    display: flex;
+    gap: 48px;
+    flex-shrink: 0;
+  }
+  .founder { display: flex; flex-direction: column; gap: 3px; }
+  .founder-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--parchment);
+    letter-spacing: -0.01em;
+  }
+  .founder-role { font-size: 11px; color: var(--stone); letter-spacing: 0.06em; }
+
+  /* ── 6. JOURNEY ── */
   .journey {
     background: var(--bg);
     border-top: 0.5px solid var(--border);
     padding: 100px 40px;
     overflow: hidden;
   }
-
   .journey-inner { max-width: 1200px; margin: 0 auto; }
-
   .journey-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 40px;
   }
-
-  .journey-heading {
+  .journey-header h2 {
     font-family: 'Outfit', sans-serif;
     font-size: clamp(32px, 5vw, 64px);
     font-weight: 300;
@@ -398,10 +362,8 @@
     letter-spacing: -0.02em;
     line-height: 1;
   }
-
-  .journey-heading em { font-style: italic; color: var(--terra); }
+  .journey-header h2 em { font-style: italic; color: var(--terra); }
   .journey-controls { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
-
   .journey-counter {
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
@@ -410,35 +372,28 @@
     min-width: 48px;
     text-align: right;
   }
-
   .journey-btn {
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.2s, background 0.2s;
+    transition: opacity 0.2s;
   }
-
   .journey-btn.prev { background: transparent; color: var(--stone); border: 0.5px solid var(--border); }
   .journey-btn.next { background: var(--terra); color: var(--cream); }
   .journey-btn:disabled { opacity: 0.3; cursor: default; }
   .journey-btn:not(:disabled):hover { opacity: 0.82; }
-
   .journey-viewport { overflow: hidden; }
-
   .journey-track {
     display: flex;
     gap: 24px;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
   }
-
   .journey-card {
     flex: 0 0 calc(50% - 12px);
     min-width: 0;
@@ -447,21 +402,16 @@
     overflow: hidden;
     transition: border-color 0.25s;
   }
-
   .journey-card:hover { border-color: var(--terra); }
-
   .journey-img-wrap {
     position: relative;
     aspect-ratio: 4 / 3;
     background: #1a1814;
     overflow: hidden;
   }
-
   .journey-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
   .journey-img-placeholder {
-    width: 100%;
-    height: 100%;
+    position: absolute; inset: 0;
     background: #1a1814;
     background-image:
       linear-gradient(var(--border) 1px, transparent 1px),
@@ -469,75 +419,175 @@
     background-size: 40px 40px;
     opacity: 0.5;
   }
-
   .journey-week-badge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
+    position: absolute; top: 16px; left: 16px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--parchment);
-    background: rgba(14, 13, 11, 0.78);
+    background: rgba(14,13,11,0.78);
     border: 0.5px solid var(--border);
     border-radius: 4px;
     padding: 4px 10px;
   }
-
   .journey-body { padding: 20px 24px 28px; }
-
   .journey-week-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--terra);
-    margin-bottom: 10px;
-    display: block;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--terra); margin-bottom: 10px; display: block;
   }
-
   .journey-title {
     font-family: 'Outfit', sans-serif;
     font-size: clamp(20px, 2.2vw, 28px);
-    font-weight: 300;
-    color: var(--parchment);
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
+    font-weight: 300; color: var(--parchment);
+    margin-bottom: 14px; letter-spacing: -0.01em;
   }
-
   .journey-text {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--stone);
-    line-height: 1.9;
-    font-weight: 300;
+    font-size: 12px; color: var(--stone); line-height: 1.9;
   }
-
   .journey-progress {
-    height: 0.5px;
-    background: var(--border);
-    margin-top: 36px;
-    position: relative;
+    height: 0.5px; background: var(--border); margin-top: 36px; position: relative;
   }
-
   .journey-progress-fill {
-    position: absolute;
-    top: 0; left: 0;
-    height: 100%;
+    position: absolute; top: 0; left: 0; height: 100%;
     background: var(--terra);
     transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* ── 7. FAQ ── */
+  .faq {
+    background: var(--bg);
+    border-top: 0.5px solid var(--border);
+    padding: 100px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .faq h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--parchment);
+    text-align: center;
+    margin-bottom: 56px;
+    letter-spacing: -0.02em;
+  }
+  .faq-list {
+    width: 100%; max-width: 780px;
+    border: 0.5px solid var(--border);
+    border-radius: 8px; overflow: hidden;
+  }
+  .faq-item { border-bottom: 0.5px solid var(--border); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-question {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 28px; text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; font-weight: 400; color: var(--parchment);
+    gap: 16px; transition: background 0.2s;
+  }
+  .faq-question:hover { background: rgba(255,255,255,0.02); }
+  .faq-icon {
+    color: var(--stone); font-size: 20px; line-height: 1; flex-shrink: 0;
+    transition: transform 0.3s ease; font-style: normal;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    font-size: 13px; color: var(--stone); line-height: 1.9; padding: 0 28px;
+  }
+  .faq-item.open .faq-answer { max-height: 220px; padding: 0 28px 22px; }
+  .faq-contact {
+    margin-top: 40px; font-size: 12px; color: var(--stone);
+    text-align: center; letter-spacing: 0.04em;
+  }
+  .faq-contact a { color: var(--stone); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* waitlist block */
+  .faq-waitlist {
+    margin-top: 56px; width: 100%; max-width: 780px;
+    padding: 52px 40px;
+    border: 0.5px solid var(--border); border-radius: 8px;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 16px; text-align: center;
+  }
+  .faq-waitlist h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 300; color: var(--parchment); letter-spacing: -0.025em;
+  }
+  .faq-waitlist p { font-size: 12px; color: var(--stone); line-height: 1.8; }
+  .faq-waitlist-form {
+    display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 8px;
+  }
+  .faq-email-input {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    padding: 14px 22px; border-radius: 9999px;
+    border: 0.5px solid var(--border);
+    background: rgba(240,235,225,0.04); color: var(--parchment);
+    outline: none; width: 240px; letter-spacing: 0.04em;
+    transition: border-color 0.2s;
+  }
+  .faq-email-input::placeholder { color: var(--stone); }
+  .faq-email-input:focus { border-color: rgba(240,235,225,0.3); }
+  #faqMsg { font-size: 12px; color: var(--stone); min-height: 18px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg);
+    border-top: 0.5px solid var(--border);
+    padding: 24px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-left { display: flex; align-items: center; gap: 24px; }
+  .footer-logo { font-family: 'Azeret Mono', monospace; font-size: 14px; color: var(--stone); letter-spacing: 1px; cursor: default; }
+  .footer-copy { font-size: 11px; color: var(--stone); letter-spacing: 0.04em; }
+  .footer-link { font-size: 11px; color: var(--stone); text-decoration: none; border-bottom: 0.5px solid transparent; transition: border 0.2s; }
+  .footer-link:hover { border-bottom: 0.5px solid var(--stone); }
+
+  /* COOKIE */
+  .cookie-banner {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    z-index: 1000; background: #1c1a16;
+    border: 0.5px solid var(--border); border-radius: 12px;
+    padding: 20px 24px; max-width: 520px; width: calc(100% - 48px);
+    display: flex; flex-direction: column; gap: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .cookie-banner.hidden { opacity: 0; transform: translateX(-50%) translateY(16px); pointer-events: none; }
+  .cookie-text { font-size: 12px; color: var(--stone); line-height: 1.7; }
+  .cookie-text a { color: var(--parchment); text-decoration: underline; text-underline-offset: 3px; }
+  .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cookie-accept {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; background: var(--terra); color: var(--cream);
+    border: none; border-radius: 9999px; padding: 10px 20px; cursor: pointer; transition: opacity 0.2s;
+  }
+  .cookie-accept:hover { opacity: 0.85; }
+  .cookie-decline {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; background: transparent; color: var(--stone);
+    border: 0.5px solid var(--border); border-radius: 9999px; padding: 10px 20px;
+    cursor: pointer; transition: color 0.2s;
+  }
+  .cookie-decline:hover { color: var(--parchment); }
+
+  /* RESPONSIVE */
   @media (max-width: 768px) {
+    .why { padding: 80px 24px; }
+    .why-line { grid-template-columns: 1fr; gap: 20px; }
+    .notnot { padding: 80px 24px; }
+    .founders { padding: 80px 24px; }
+    .founders-top { grid-template-columns: 1fr; gap: 24px; }
     .journey { padding: 72px 24px; }
     .journey-card { flex: 0 0 85%; }
+    .intro { padding: 80px 24px; min-height: auto; padding-top: 100px; padding-bottom: 100px; }
+    .faq-waitlist { padding: 36px 24px; }
   }
-
-  @media (max-width: 480px) {
-    .journey-card { flex: 0 0 90%; }
-  }
-
   @media (max-width: 600px) {
     .hero-logo { left: 24px; top: 24px; }
     footer { padding: 20px 24px; flex-direction: column; text-align: center; }
@@ -545,34 +595,48 @@
     .faq-question { padding: 18px 20px; font-size: 12px; }
     .faq-answer { padding: 0 20px; }
     .faq-item.open .faq-answer { padding: 0 20px 18px; }
-    .survey { padding: 72px 24px; }
   }
 </style>
 </head>
 <body>
 
+<!-- 1. HERO — original untouched -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-logo">twyn<span>.</span></div>
+  <div class="hero-logo">twyn<span style="color:var(--parchment)">.</span></div>
   <div class="hero-content">
     <h1 class="hero-heading">your one thing.</h1>
     <p class="hero-sub">the wellness companion that's actually on your side.</p>
     <div id="waitlistForm" style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center;">
-      <input
-        type="email"
-        id="waitlistEmail"
-        placeholder="your@email.com"
-        style="font-family:'JetBrains Mono',monospace;font-size:13px;padding:16px 24px;border-radius:9999px;border:0.5px solid rgba(240,235,225,0.25);background:rgba(240,235,225,0.07);color:var(--parchment);outline:none;width:260px;letter-spacing:0.04em;"
-      />
-      <button onclick="submitWaitlist()" class="btn">join the waitlist</button>
+      <input type="email" id="waitlistEmail" placeholder="your@email.com"
+        style="font-family:'JetBrains Mono',monospace;font-size:13px;padding:16px 24px;border-radius:9999px;border:0.5px solid rgba(240,235,225,0.25);background:rgba(240,235,225,0.07);color:var(--parchment);outline:none;width:260px;letter-spacing:0.04em;" />
+      <button onclick="submitWaitlist('hero')" class="btn">join the waitlist</button>
     </div>
     <p id="waitlistMsg" style="font-size:12px;color:var(--stone);letter-spacing:0.04em;min-height:18px;margin-top:4px;"></p>
   </div>
 </section>
 
-<!-- ── Survey Section ── -->
-<section class="survey">
+<!-- 2. TWYN IS HERE TO FIX ___, MADE BY X & X -->
+<section class="intro" id="intro">
+  <h2>twyn is here to fix your<br>relationship with <em>wellness.</em></h2>
+  <p>made by Nikita &amp; Amanda, two best friends from London.</p>
+</section>
+
+<!-- 3. WE GOT TIRED -->
+<section class="why" id="why" style="background-image:url('bg-why.jpg');">
+  <h3>we got tired of apps<br>that made us feel <em>worse.</em></h3>
+  <p>calorie counters, broken streaks, red numbers. the tools meant to help us were making us feel bad. so we built the friend we always needed.</p>
+</section>
+
+<!-- 4. TWYN IS NOT MEANT TO -->
+<section class="why" id="notnot" style="background-image:url('bg-notnot.jpg');">
+  <h3>not here to track.<br>here to help you <em>live.</em></h3>
+  <p>not a calorie counter. not a coach. not a streak machine. just a friend in your pocket who helps you stay on track without making it a whole thing.</p>
+</section>
+
+<!-- SURVEY -->
+<section class="survey" id="survey">
   <div class="survey-inner">
     <span class="survey-label">shape what we build</span>
     <h2 class="survey-heading">we're building this for you.</h2>
@@ -580,72 +644,91 @@
     <a href="https://twyn.fillout.com/healthjourney" target="_blank" rel="noopener noreferrer" class="btn-outline">take the survey</a>
   </div>
 </section>
-<!-- ── end Survey Section ── -->
 
-<section class="journey">
-  <div class="journey-inner">
-    <div class="journey-header">
-      <h2 class="journey-heading">follow our <em>journey.</em></h2>
-      <div class="journey-controls" id="journeyControls">
-        <span class="journey-counter" id="journeyCounter">01 / 01</span>
-        <button class="journey-btn prev" id="journeyPrev" aria-label="Previous week">←</button>
-        <button class="journey-btn next" id="journeyNext" aria-label="Next week">→</button>
+<!-- 5. MADE BY 2 TECH GIRLIES -->
+<section class="founders" id="founders">
+  <div class="founders-inner">
+    <div class="founders-top">
+      <h2>made by two tech<br>girlies who <em>get it.</em></h2>
+      <p>we're nikita and amanda — a product manager and a product designer, both based in east london. we built twyn because we couldn't find the app we wanted to use ourselves.</p>
+    </div>
+    <div class="founders-photo">
+      <img src="founders.jpg" alt="Nikita and Amanda" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="founders-photo-placeholder">photo of nikita &amp; amanda</div>
+    </div>
+    <div class="founders-names">
+      <div class="founder">
+        <div class="founder-name">Nikita</div>
+        <div class="founder-role">product &amp; co-founder</div>
+      </div>
+      <div class="founder">
+        <div class="founder-name">Amanda</div>
+        <div class="founder-role">design &amp; co-founder</div>
       </div>
     </div>
+  </div>
+</section>
 
+<!-- 6. JOURNEY -->
+<section class="journey" id="journey">
+  <div class="journey-inner">
+    <div class="journey-header">
+      <h2>follow our <em>journey.</em></h2>
+      <div class="journey-controls" id="journeyControls">
+        <span class="journey-counter" id="journeyCounter">01 / 03</span>
+        <button class="journey-btn prev" id="journeyPrev" aria-label="Previous">←</button>
+        <button class="journey-btn next" id="journeyNext" aria-label="Next">→</button>
+      </div>
+    </div>
     <div class="journey-viewport">
       <div class="journey-track" id="journeyTrack">
-
         <div class="journey-card">
           <div class="journey-img-wrap">
-            <img src="week1.jpg" alt="Week 1 — Xcode setup and welcome screen design" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-            <div class="journey-img-placeholder" style="display:none;position:absolute;inset:0;"></div>
+            <img src="week1.jpg" alt="Week 1" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <div class="journey-img-placeholder" style="display:none"></div>
             <span class="journey-week-badge">week 01</span>
           </div>
           <div class="journey-body">
             <span class="journey-week-label">week 01</span>
             <h3 class="journey-title">building the brand.</h3>
-            <p class="journey-text">week one was about more than just aesthetics; it was about defining the soul of twyn. We focused on establishing a visual identity and design system that balances personality with scalability. By launching our social presence early, we've begun building a community-led feedback loop before the first pixel of the app is even interacted with.</p>
+            <p class="journey-text">visual identity, design system, and launching social before a single pixel of the app was live.</p>
           </div>
         </div>
-
         <div class="journey-card">
           <div class="journey-img-wrap">
-            <img src="week2.jpg" alt="Week 2 — animations, polish and making it feel alive" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-            <div class="journey-img-placeholder" style="display:none;position:absolute;inset:0;"></div>
+            <img src="week2.jpg" alt="Week 2" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <div class="journey-img-placeholder" style="display:none"></div>
             <span class="journey-week-badge">week 02</span>
           </div>
           <div class="journey-body">
             <span class="journey-week-label">week 02</span>
             <h3 class="journey-title">making it feel alive.</h3>
-            <p class="journey-text">week two went deep on onboarding and UI. We mapped the full user flow to minimise cognitive load, ensuring the path to the "Aha!" moment feels effortless. We refined the micro-animations that make interactions feel considered and got Apple Sign-in working end-to-end to remove entry friction. The small stuff - the transitions, the timing, the moments between taps - is what defines the mental model and separates an app people tolerate from one they truly love using.</p>
+            <p class="journey-text">onboarding flow, micro-animations, and apple sign-in working end to end.</p>
           </div>
         </div>
-
-       <div class="journey-card">
-  <div class="journey-img-wrap">
-    <img src="week3.jpg" alt="Week 3 — social strategy and community building" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-    <div class="journey-img-placeholder" style="display:none;position:absolute;inset:0;"></div>
-    <span class="journey-week-badge">week 03</span>
-  </div>
-  <div class="journey-body">
-    <span class="journey-week-label">week 03</span>
-    <h3 class="journey-title">building our community.</h3>
-    <p class="journey-text">week three shifted focus to the world outside the app. we mapped out our social strategy, started creating content, and began growing the waitlist. before twyn launches, we want a community of people who already get what we're building and why — people who've been on the journey with us from the start.</p>
-  </div>
-</div>
-
+        <div class="journey-card">
+          <div class="journey-img-wrap">
+            <img src="week3.jpg" alt="Week 3" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <div class="journey-img-placeholder" style="display:none"></div>
+            <span class="journey-week-badge">week 03</span>
+          </div>
+          <div class="journey-body">
+            <span class="journey-week-label">week 03</span>
+            <h3 class="journey-title">building our community.</h3>
+            <p class="journey-text">social strategy, content, and growing the waitlist from day one.</p>
+          </div>
+        </div>
       </div>
     </div>
-
     <div class="journey-progress">
       <div class="journey-progress-fill" id="journeyProgressFill"></div>
     </div>
   </div>
 </section>
 
-<section class="faq">
-  <h2 class="faq-heading">frequently asked questions.</h2>
+<!-- 7. FAQ + WAITLIST -->
+<section class="faq" id="faq">
+  <h2>frequently asked questions.</h2>
   <div class="faq-list">
     <div class="faq-item open">
       <button class="faq-question" aria-expanded="true">what is twyn?<i class="faq-icon">+</i></button>
@@ -663,13 +746,26 @@
       <button class="faq-question" aria-expanded="false">when does twyn launch?<i class="faq-icon">+</i></button>
       <div class="faq-answer">soon. join the waitlist for early access and a locked-in launch price before we open to everyone.</div>
     </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">how much does it cost?<i class="faq-icon">+</i></button>
+      <div class="faq-answer">twyn is free to download. twyn+ is £8.99/month. waitlist members get a locked-in early adopter price.</div>
+    </div>
   </div>
   <p class="faq-contact">still have questions? <a href="https://instagram.com/twyn.io">dm us on instagram</a></p>
+  <div class="faq-waitlist" id="faq-waitlist">
+    <h3>get early access.</h3>
+    <p>join the waitlist. waitlist members get a locked-in early adopter price.</p>
+    <div class="faq-waitlist-form" id="faqForm">
+      <input type="email" id="faqEmail" class="faq-email-input" placeholder="your@email.com" />
+      <button onclick="submitWaitlist('faq')" class="btn">join the waitlist</button>
+    </div>
+    <p id="faqMsg"></p>
+  </div>
 </section>
 
 <footer>
   <div class="footer-left">
-    <div class="footer-logo">twyn<span>.</span></div>
+    <div class="footer-logo">twyn<span style="color:var(--stone)">.</span></div>
     <a href="privacy.html" class="footer-link">privacy policy</a>
     <a href="terms.html" class="footer-link">terms &amp; conditions</a>
   </div>
@@ -685,38 +781,41 @@
 </div>
 
 <script>
-  async function submitWaitlist() {
-    const email = document.getElementById('waitlistEmail').value.trim()
-    const msg = document.getElementById('waitlistMsg')
-    if (!email || !email.includes('@')) { msg.textContent = 'please enter a valid email.'; return }
-    msg.textContent = '...'
-    const res = await fetch('https://ssgqucgbnguthqwrwpzc.supabase.co/functions/v1/submit-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
-    })
-    if (res.ok) {
-      document.getElementById('waitlistForm').style.display = 'none'
-      msg.style.color = 'var(--parchment)'
-      msg.textContent = "you're on the list. we'll be in touch \u2726"
-    } else if (res.status === 409) {
-      msg.textContent = "you're already on the list!"
-    } else {
-      msg.textContent = 'something went wrong — dm us on instagram.'
-    }
+  async function submitWaitlist(source) {
+    const emailId = source === 'hero' ? 'waitlistEmail' : 'faqEmail';
+    const msgId   = source === 'hero' ? 'waitlistMsg'   : 'faqMsg';
+    const formId  = source === 'hero' ? 'waitlistForm'  : 'faqForm';
+    const email   = document.getElementById(emailId).value.trim();
+    const msg     = document.getElementById(msgId);
+    if (!email || !email.includes('@')) { msg.textContent = 'please enter a valid email.'; return; }
+    msg.textContent = '...';
+    try {
+      const res = await fetch('https://ssgqucgbnguthqwrwpzc.supabase.co/functions/v1/submit-email', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      if (res.ok) {
+        document.getElementById(formId).style.display = 'none';
+        msg.style.color = 'var(--parchment)';
+        msg.textContent = "you're on the list. we'll be in touch \u2726";
+      } else if (res.status === 409) {
+        msg.textContent = "you're already on the list!";
+      } else {
+        msg.textContent = 'something went wrong — dm us on instagram.';
+      }
+    } catch(e) { msg.textContent = 'something went wrong — dm us on instagram.'; }
   }
 
-  document.getElementById('waitlistEmail').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') submitWaitlist()
-  })
+  document.getElementById('waitlistEmail').addEventListener('keydown', e => { if (e.key === 'Enter') submitWaitlist('hero'); });
+  document.getElementById('faqEmail').addEventListener('keydown', e => { if (e.key === 'Enter') submitWaitlist('faq'); });
 
-  ;(function () {
-    const track    = document.getElementById('journeyTrack');
-    const prevBtn  = document.getElementById('journeyPrev');
-    const nextBtn  = document.getElementById('journeyNext');
-    const counter  = document.getElementById('journeyCounter');
+  (function () {
+    const track = document.getElementById('journeyTrack');
+    const prevBtn = document.getElementById('journeyPrev');
+    const nextBtn = document.getElementById('journeyNext');
+    const counter = document.getElementById('journeyCounter');
     const controls = document.getElementById('journeyControls');
-    const fill     = document.getElementById('journeyProgressFill');
+    const fill = document.getElementById('journeyProgressFill');
     if (!track) return;
     const cards = Array.from(track.querySelectorAll('.journey-card'));
     const total = cards.length;
@@ -734,11 +833,10 @@
       prevBtn.disabled = current === 0;
       nextBtn.disabled = current >= maxIndex();
       controls.style.visibility = total > 1 ? 'visible' : 'hidden';
-      const pct = maxIndex() === 0 ? 100 : (current / maxIndex()) * 100;
-      fill.style.width = pct + '%';
+      fill.style.width = (maxIndex() === 0 ? 100 : (current / maxIndex()) * 100) + '%';
     }
-    prevBtn.addEventListener('click', function () { if (current > 0) { current--; update(); } });
-    nextBtn.addEventListener('click', function () { if (current < maxIndex()) { current++; update(); } });
+    prevBtn.addEventListener('click', () => { if (current > 0) { current--; update(); } });
+    nextBtn.addEventListener('click', () => { if (current < maxIndex()) { current++; update(); } });
     window.addEventListener('resize', update);
     update();
   }());
@@ -751,24 +849,14 @@
         i.classList.remove('open');
         i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
       });
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
     });
   });
 
   const banner = document.getElementById('cookieBanner');
   if (localStorage.getItem('twyn_cookie_consent')) banner.classList.add('hidden');
-  document.getElementById('cookieAccept').addEventListener('click', () => {
-    localStorage.setItem('twyn_cookie_consent', 'accepted');
-    banner.classList.add('hidden');
-  });
-  document.getElementById('cookieDecline').addEventListener('click', () => {
-    localStorage.setItem('twyn_cookie_consent', 'declined');
-    banner.classList.add('hidden');
-  });
+  document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem('twyn_cookie_consent', 'accepted'); banner.classList.add('hidden'); });
+  document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem('twyn_cookie_consent', 'declined'); banner.classList.add('hidden'); });
 </script>
-
 </body>
 </html>
