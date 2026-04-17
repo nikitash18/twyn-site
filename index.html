@@ -172,9 +172,11 @@
     font-size: 13px;
     color: #8a7e72;
     letter-spacing: 0.04em;
+    max-width: 580px;
+    line-height: 1.9;
   }
 
-  /* ── 3. WE GOT TIRED + NOT MEANT TO ── */
+  /* ── 3 & 4. WHY + WHAT ── */
   .why {
     background: var(--bg);
     background-size: cover;
@@ -214,9 +216,8 @@
     color: rgba(240,235,225,0.65);
     letter-spacing: 0.04em;
     line-height: 1.8;
-    max-width: 440px;
+    max-width: 480px;
   }
-
 
   /* ── SURVEY ── */
   .survey {
@@ -291,8 +292,6 @@
     color: var(--stone);
     line-height: 1.9;
   }
-
-  /* photo fills remaining space */
   .founders-photo {
     width: 100%;
     height: 500px;
@@ -319,7 +318,6 @@
     text-transform: uppercase;
     color: var(--border);
   }
-
   .founders-names {
     display: flex;
     gap: 48px;
@@ -493,14 +491,12 @@
     transition: max-height 0.35s ease, padding 0.35s ease;
     font-size: 13px; color: var(--stone); line-height: 1.9; padding: 0 28px;
   }
-  .faq-item.open .faq-answer { max-height: 220px; padding: 0 28px 22px; }
+  .faq-item.open .faq-answer { max-height: 300px; padding: 0 28px 22px; }
   .faq-contact {
     margin-top: 40px; font-size: 12px; color: var(--stone);
     text-align: center; letter-spacing: 0.04em;
   }
   .faq-contact a { color: var(--stone); text-decoration: underline; text-underline-offset: 3px; }
-
-  /* waitlist block */
   .faq-waitlist {
     margin-top: 56px; width: 100%; max-width: 780px;
     padding: 52px 40px;
@@ -574,8 +570,6 @@
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .why { padding: 80px 24px; }
-    .why-line { grid-template-columns: 1fr; gap: 20px; }
-    .notnot { padding: 80px 24px; }
     .founders { padding: 80px 24px; }
     .founders-top { grid-template-columns: 1fr; gap: 24px; }
     .journey { padding: 72px 24px; }
@@ -612,22 +606,22 @@
   </div>
 </section>
 
-<!-- 2. TWYN IS HERE TO FIX ___, MADE BY X & X -->
+<!-- SECTION 1 — white, twyn is here -->
 <section class="intro" id="intro">
-  <h2>twyn is here to fix your<br>relationship with <em>wellness.</em></h2>
-  <p>made by Nikita &amp; Amanda, two best friends from London.</p>
+  <h2>you're more than a <em>calorie count.</em></h2>
+  <p>Most health apps treat you like a math problem to be solved. We built Twyn because we were tired of feeling "behind" on our own lives. No more anxiety over missed logs or notification guilt. We're building the friend in your pocket we always needed.</p>
 </section>
 
-<!-- 3. WE GOT TIRED -->
+<!-- SECTION 2 — dark, we got tired -->
 <section class="why" id="why" style="background-image:url('bg-why.jpg');">
   <h3>we got tired of apps<br>that made us feel <em>worse.</em></h3>
   <p>calorie counters, broken streaks, red numbers. the tools meant to help us were making us feel bad. so we built the friend we always needed.</p>
 </section>
 
-<!-- 4. TWYN IS NOT MEANT TO -->
+<!-- SECTION 3 — dark, less tracking more living -->
 <section class="why" id="notnot" style="background-image:url('bg-notnot.jpg');">
-  <h3>not here to track.<br>here to help you <em>live.</em></h3>
-  <p>not a calorie counter. not a coach. not a streak machine. just a friend in your pocket who helps you stay on track without making it a whole thing.</p>
+  <h3>less tracking.<br>more <em>living.</em></h3>
+  <p>Twyn uses AI to understand your patterns through conversation. It's not a coach barking orders — it's the nudge you need to choose the salad bowl when you want it, and the peace of mind to enjoy the pizza when you don't.</p>
 </section>
 
 <!-- SURVEY -->
@@ -640,12 +634,12 @@
   </div>
 </section>
 
-<!-- 5. MADE BY 2 TECH GIRLIES -->
+<!-- FOUNDERS -->
 <section class="founders" id="founders">
   <div class="founders-inner">
     <div class="founders-top">
-      <h2>made by two tech<br>girlies who <em>get it.</em></h2>
-      <p>we're nikita and amanda — a product manager and a product designer, both based in east london. we built twyn because we couldn't find the app we wanted to use ourselves.</p>
+      <h2>built by two best friends<br>who just wanted<br><em>a better app.</em></h2>
+      <p>We're Nikita and Amanda — two best friends in London working in product and design. We spend our days building tech for everyone else, but when it came to our own health, everything felt like a math problem. Between logging coffees and tracking our steps, we were miserable — so we built Twyn. It's the check-in we actually look forward to, trading rigid coaching for a smart conversation that gets you.</p>
     </div>
     <div class="founders-photo">
       <img src="founders.jpg" alt="Nikita and Amanda" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -664,7 +658,7 @@
   </div>
 </section>
 
-<!-- 6. JOURNEY -->
+<!-- JOURNEY -->
 <section class="journey" id="journey">
   <div class="journey-inner">
     <div class="journey-header">
@@ -679,14 +673,14 @@
       <div class="journey-track" id="journeyTrack">
         <div class="journey-card">
           <div class="journey-img-wrap">
-            <img src="week1.jpg" alt="Week 1" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <img src="week3.jpg" alt="Week 3" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
             <div class="journey-img-placeholder" style="display:none"></div>
-            <span class="journey-week-badge">week 01</span>
+            <span class="journey-week-badge">week 03</span>
           </div>
           <div class="journey-body">
-            <span class="journey-week-label">week 01</span>
-            <h3 class="journey-title">building the brand.</h3>
-            <p class="journey-text">visual identity, design system, and launching social before a single pixel of the app was live.</p>
+            <span class="journey-week-label">week 03</span>
+            <h3 class="journey-title">building our community.</h3>
+            <p class="journey-text">social strategy, content, and growing the waitlist from day one.</p>
           </div>
         </div>
         <div class="journey-card">
@@ -703,14 +697,14 @@
         </div>
         <div class="journey-card">
           <div class="journey-img-wrap">
-            <img src="week3.jpg" alt="Week 3" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <img src="week1.jpg" alt="Week 1" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
             <div class="journey-img-placeholder" style="display:none"></div>
-            <span class="journey-week-badge">week 03</span>
+            <span class="journey-week-badge">week 01</span>
           </div>
           <div class="journey-body">
-            <span class="journey-week-label">week 03</span>
-            <h3 class="journey-title">building our community.</h3>
-            <p class="journey-text">social strategy, content, and growing the waitlist from day one.</p>
+            <span class="journey-week-label">week 01</span>
+            <h3 class="journey-title">building the brand.</h3>
+            <p class="journey-text">visual identity, design system, and launching social before a single pixel of the app was live.</p>
           </div>
         </div>
       </div>
@@ -721,29 +715,29 @@
   </div>
 </section>
 
-<!-- 7. FAQ + WAITLIST -->
+<!-- FAQ + WAITLIST -->
 <section class="faq" id="faq">
   <h2>frequently asked questions.</h2>
   <div class="faq-list">
     <div class="faq-item open">
       <button class="faq-question" aria-expanded="true">what is twyn?<i class="faq-icon">+</i></button>
-      <div class="faq-answer">twyn is an AI wellness companion. you tell her what you ate, she tracks your calories, water and steps. no barcodes, no guilt, no red numbers.</div>
+      <div class="faq-answer">an AI wellness companion that doesn't nag you. it's a place to dump how you're feeling and what you're doing so you can actually see patterns without the math.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" aria-expanded="false">how does logging work?<i class="faq-icon">+</i></button>
-      <div class="faq-answer">just talk to her naturally. "had a flat white and some granola" is enough. twyn estimates the calories, confirms back, and saves it to your day.</div>
+      <div class="faq-answer">you just talk to it. text twyn like you'd text us: "starving but happy," or "long day, need sleep." no databases, no searching for "spinach" in a list of 500 items.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" aria-expanded="false">does it connect to apple health?<i class="faq-icon">+</i></button>
-      <div class="faq-answer">yes. twyn reads your steps and active calories from apple health automatically. you never have to log movement manually.</div>
+      <div class="faq-answer">yes, it pulls the boring stuff (steps, sleep) automatically so you don't have to think about it.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" aria-expanded="false">when does twyn launch?<i class="faq-icon">+</i></button>
-      <div class="faq-answer">soon. join the waitlist for early access and a locked-in launch price before we open to everyone.</div>
+      <div class="faq-answer">soon. we're fine-tuning things right now to make sure it's actually helpful and not just another app you forget about. join the waitlist and you'll be the first to know.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" aria-expanded="false">how much does it cost?<i class="faq-icon">+</i></button>
-      <div class="faq-answer">twyn is free to download. twyn+ is £8.99/month. waitlist members get a locked-in early adopter price.</div>
+      <div class="faq-answer">twyn is free to download and comes with a 3-day free trial so you can see if it clicks for you. after that, we offer monthly, yearly, or lifetime subscriptions.</div>
     </div>
   </div>
   <p class="faq-contact">still have questions? <a href="https://instagram.com/twyn.io">dm us on instagram</a></p>
